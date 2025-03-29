@@ -1,0 +1,41 @@
+{
+	"name": "linkedin-clone",
+	"version": "1.0.0",
+	"description": "",
+	"main": "backend/server.js",
+	"scripts": {
+		"dev": "nodemon backend/server.js",
+		"dev:frontend": "npm run dev --prefix frontend",
+		"dev:all": "concurrently \"npm run dev\" \"npm run dev:frontend\"",
+		"start": "node backend/server.js",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+		"create-indexes": "node backend/lib/createIndexes.js",
+		"lint": "eslint . --ext .js,.jsx",
+		"format": "prettier --write '**/*.{js,jsx,json,md}'"
+	},
+	"keywords": [],
+	"author": "",
+	"type": "module",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cloudinary": "^2.4.0",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"express-rate-limit": "^7.5.0",
+		"helmet": "^8.1.0",
+		"jsonwebtoken": "^9.0.2",
+		"mailtrap": "^3.4.0",
+		"mongoose": "^8.6.1"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.2",
+		"eslint": "^9.23.0",
+		"eslint-config-prettier": "^10.1.1",
+		"eslint-plugin-prettier": "^5.2.5",
+		"nodemon": "^3.1.4",
+		"prettier": "^3.5.3"
+	}
+}
